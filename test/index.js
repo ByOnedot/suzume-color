@@ -193,9 +193,9 @@ it('blue', () => {
   ]);
 });
 
-it('arcoblue', () => {
-  expect(generate('#165DFF', { list: true })).toEqual(presetColors.arcoblue.light);
-  expect(generate('#165DFF', { list: true, dark: true })).toEqual(presetColors.arcoblue.dark);
+it('suzumeblue', () => {
+  expect(generate('#165DFF', { list: true })).toEqual(presetColors.suzumeblue.light);
+  expect(generate('#165DFF', { list: true, dark: true })).toEqual(presetColors.suzumeblue.dark);
   expect(generate('#165DFF', { list: true })).toEqual([
     '#E8F3FF', '#BEDAFF',
     '#94BFFF', '#6AA1FF',

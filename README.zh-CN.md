@@ -1,17 +1,17 @@
-# ArcoDesign Color
+# SuzumeDesign Color
 
-ArcoDesign Color Utils. 
+SuzumeDesign Color Utils. 
 
 根据给定颜色通过算法生成指定包含十个颜色的梯度色板，也可生成暗色模式下包含十个颜色的色板。
 
 ## Usage
 
 ```bash
-npm i @arco-design/color
+npm i @suzume-design/color
 ```
 
 ```js
-import { generate, presetColor } from '@arco-design/color';
+import { generate, presetColor } from '@suzume-design/color';
 
 console.log(generate('#123456'));
 
@@ -26,7 +26,7 @@ console.log(presetColor);
 //   green: {...},
 //   cyan: {...},
 //   blue: {...},
-//   arcoblue: {...},
+//   suzumeblue: {...},
 //   purple: {...},
 //   pinkpurple: {...},
 //   magenta: {...},
@@ -67,7 +67,7 @@ console.log(presetColor);
 * `green`
 * `cyan`
 * `blue`
-* `arcoblue`
+* `suzumeblue`
 * `purple`
 * `pinkpurple`
 * `magenta`

@@ -14,7 +14,7 @@ const colorList = {
   green: '#00B42A',
   cyan: '#14C9C9',
   blue: '#3491FA',
-  arcoblue: '#165DFF',
+  suzumeblue: '#165DFF',
   purple: '#722ED1',
   pinkpurple: '#D91AD9',
   magenta: '#F5319D',

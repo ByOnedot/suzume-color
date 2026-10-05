@@ -20,11 +20,11 @@ Every significant change is documented in the changelog file.
 
 ## Reporting Issues
 
-We use [Github issues](https://github.com/arco-design/color/issues) for bug reports and feature requests. Before reporting an issue, please make sure you have searched for similar [issues](https://github.com/arco-design/color/issues) as they may have been already answered or being fixed. A new issue should be submitted via [issue helper](https://arco-design/issue-helper). For bug reporting, please include the minimum code that can be used to reproduce the problem. For feature request, please specify what changes you want and what behavior you expect.
+Please report bugs and feature requests through the project issue tracker on https://byonedot.in. Before opening an issue, search existing reports first - many questions have already been answered. For bug reporting, please include the minimum code that can be used to reproduce the problem. For feature request, please specify what changes you want and what behavior you expect.
 
 ## Sending a pull request
 
-1. Fork [the repository](https://github.com/arco-design/color) and create your branch from `main`. For new feature, please submit your changes directly to the `feature` branch. Other changes should go against `main` branch.
+1. Fork the repository and create your branch from `main`. For new feature, please submit your changes directly to the `feature` branch. Other changes should go against `main` branch.
 1. Make changes to the codebase. Please add tests if applicable.
 1. Make sure the test suite passes with `npm run test`. 
 1. Commit your changes, adhering to the [Commit Guidelines](#commit-guidelines)

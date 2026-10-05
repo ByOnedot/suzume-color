@@ -1,89 +1,66 @@
-# ArcoDesign Color
+# @suzume-design/color
 
-ArcoDesign Color Utils. 
+Color palette generation and color utilities for **Suzume Design**.
 
-For a given color, a gradient swatch containing ten colors is generated with an algorithm. This works for both light and dark modes.
+`@suzume-design/color` generates the 1–10 light and dark palettes used by the
+Suzume Design token system, and exposes a few small helpers for reading color
+channels.
+
+## Install
+
+```bash
+npm i @suzume-design/color
+# or
+yarn add @suzume-design/color
+```
 
 ## Usage
 
-```bash
-npm i @arco-design/color
-```
-
 ```js
-import { generate, getPresetColors } from '@arco-design/color';
+const { generate, getRgbStr, getPresetColors } = require('@suzume-design/color');
 
-console.log(generate('#123456'));
+// A single step of a palette (index 1 - 10, default 6)
+generate('#165DFF', { index: 1 }); // '#EDF3FF'
 
-console.log(getPresetColors());
-// {
-//   red: {...},
-//   orangered: {...},
-//   orange: {...},
-//   gold: {...},
-//   yellow: {...},
-//   lime: {...},
-//   green: {...},
-//   cyan: {...},
-//   blue: {...},
-//   arcoblue: {...},
-//   purple: {...},
-//   pinkpurple: {...},
-//   magenta: {...},
-//   gray: {...}
-// }
+// The whole palette as an array
+generate('#165DFF', { list: true });
+// ['#EDF3FF', '#DCEBFF', ..., '#165DFF', ..., '#003AAB']
+
+// Dark palette
+generate('#165DFF', { list: true, dark: true });
+
+// RGB channel string, handy for CSS `rgb(var(--token))`
+getRgbStr('#165DFF'); // '22,93,255'
+
+// Every preset palette (light + dark + primary for each key)
+getPresetColors();
 ```
 
-## API
+### `generate(color, options)`
 
-### generate(color: string, options: Object);
+| Option  | Type      | Default | Description                                  |
+| ------- | --------- | ------- | -------------------------------------------- |
+| `color` | `string`  | -       | Any CSS color string                         |
+| `index` | `number`  | `6`     | Palette step, `1` – `10`                     |
+| `dark`  | `boolean` | `false` | Generate the dark palette                    |
+| `list`  | `boolean` | `false` | Return the full 10-step palette              |
+| `format`| `string`  | `'hex'` | `hex`, `rgb` or `hsl`                        |
 
-#### options.index {number | 1-10}
+### Preset colors
 
-Index (starting from 1) of the gradient colors to be generated.
+`getPresetColors()` returns an object with a `light`, `dark` and `primary`
+entry for every preset:
 
-#### options.list {boolean}
+`red`, `orangered`, `orange`, `gold`, `yellow`, `lime`, `green`, `cyan`,
+`blue`, **`suzumeblue`**, `purple`, `pinkpurple`, `magenta`, `gray`.
 
-Whether to generate color array containing the ten colors.
+`suzumeblue` is the Suzume Design brand/primary blue (`#165DFF`).
 
-#### options.dark
+## TypeScript
 
-Whether to generate colors for dark mode.
+The package ships plain CommonJS source with no build step; types are not
+bundled. It is consumed by `@suzume-design/web-react` for theme generation.
 
-#### options.format {'hex' | 'rgb' | 'hsl'}
+## License
 
-Color format.
-### getPresetColors {Function}
-
-Contains 14 preset sets of colors.
-
-* `red`
-* `orangered`
-* `orange`
-* `gold`
-* `yellow`
-* `lime`
-* `green`
-* `cyan`
-* `blue`
-* `arcoblue`
-* `purple`
-* `pinkpurple`
-* `magenta`
-* `gray`
-
-```js
-const { red } = getPresetColors();
-
-console.log(red.light);
-console.log(red.dark);
-console.log(red.primary);
-```
-
-### getRgbStr(color: string)
-
-For a given color, get the r, g, b value in string
-
-```js
-getRgbStr('#F53F3F') // 245,63,63
-```
+MIT. See `LICENSE` and `THIRD_PARTY_NOTICES.md` in this repository.
